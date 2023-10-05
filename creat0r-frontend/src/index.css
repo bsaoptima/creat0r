@@ -1,0 +1,21 @@
+@tailwind base;
+html {
+  scroll-behavior: smooth;
+}
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Alliance';
+    src: url('./assets/fonts/alliance_regular.otf');
+  }
+
+@font-face {
+    font-family: 'SFProDisplay';
+    src: url('./assets/fonts/SFProDisplay-Regular.ttf');
+}
+
+#root {
+  margin: 0 auto;
+  background-color:#F6F9FC;
+}

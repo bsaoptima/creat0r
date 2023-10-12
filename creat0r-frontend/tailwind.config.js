@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         'alliance': ["Alliance", "sans-serif"],
         'sfprodisplay': ["SFProDisplay", "sans-serif"],
+        'trip': ["Trip", "sans-serif"]
       },
     },
   },

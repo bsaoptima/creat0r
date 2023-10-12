@@ -15,6 +15,11 @@ html {
     src: url('./assets/fonts/SFProDisplay-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Trip';
+  src: url('./assets/fonts/trip-sans-variable.ttf');
+}
+
 #root {
   margin: 0 auto;
   background-color:#F6F9FC;

@@ -46,5 +46,15 @@ def create_sdk_token():
     response = requests.post(url, json=payload, headers=headers)
     return response.json()
 
-sdk_token = create_sdk_token()
-print(sdk_token)
+
+def retrieve_accounts():
+    url = "https://api.sandbox.getphyllo.com/v1/profiles"
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": f"Basic {base_64_encode}"
+    }
+    response = requests.get(url, headers=headers)
+    
+accounts = retrieve_accounts()
+print(accounts)

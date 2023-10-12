@@ -1,22 +1,15 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
-import PhylloSDK from "../../phylloSDKService/phylloSDKInit";
-import "./Home.css";
 
 const HomePage = () => {
-  const phylloSDK = new PhylloSDK();
-
-  const handleGetStarted = async () => {
-    await phylloSDK.openPhylloSDK();
-  };
 
   return (
     <div>
-      <Navbar />
-      <div className="home-container">
-        <h1>Get Started With Phyllo</h1>
-        <button className="home-button" onClick={handleGetStarted}>
-          Get Started
+      <div className="flex flex-col justify-center items-center gap-y-10 h-screen p-20">
+        <p className="text-5xl font-trip font-extrabold">Manage all your accounts on a single platform</p>
+        <button className="">
+          <a href="/accounts">
+            <p className="font-trip font-semibold">Get Started</p>
+          </a>
         </button>
       </div>
     </div>

@@ -38,6 +38,7 @@ const createUser = async (username, externalId) => {
       name: username,
       external_id: externalId,
     });
+    localStorage.setItem("PHYLLO_USER_ID", response.data.id)
     return response.data.id;
   } catch (err) {
     return err.body;

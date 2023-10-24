@@ -38,8 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'creat0r'
+    'creat0r',
+    'corsheaders',
+    'channels',
 ]
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +60,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    # "channels.middleware.ChannelsLayerMiddleware",
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -57,6 +71,11 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5174',
     'http://localhost:5173',
 ]
+
+# ALLOWED_WEBSOCKET_ORIGINS  = [
+#     'http://localhost:5174',
+#     'http://localhost:5173',
+# ]
 
 ALLOWED_HOSTS = [
     "*"

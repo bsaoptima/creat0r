@@ -4,7 +4,6 @@ class PhylloSDK {
   async openPhylloSDK() {
     const timeStamp = new Date();
     let userId = await createUser("Test App", timeStamp.getTime());
-    console.log(userId)
     let token = await createUserToken(userId);
 
     const config = {
@@ -39,7 +38,7 @@ class PhylloSDK {
     phylloConnect.on("exit", (reason, userId) => {
       console.log(`onExit: ${reason}, ${userId}`);
       alert("Phyllo SDK exit reason: " + reason);
-      // window.location.href = "/accounts";
+      window.location.href = "/accounts";
     });
 
     phylloConnect.on("connectionFailure", (reason, workplatformId, userId) => {
